@@ -1,7 +1,15 @@
-import  Express  from "express";
-const app = Express()
+import Express from "express";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 
-app.listen(3000,()=>{
-    console.log("server is running");
-})
+mongoose
+  .connect(process.env.MONGO)
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((err) => console.log(err));
 
+const app = Express();
+
+app.listen(3000, () => {
+  console.log("server is running");
+});
