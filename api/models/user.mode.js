@@ -22,3 +22,5 @@ const User = mongoose.model("User",userSchma)
 export default User
 
 
+
+
